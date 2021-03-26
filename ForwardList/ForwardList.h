@@ -13,7 +13,8 @@ public:
 	void push_back(const T&);
 	void push_front(const T&);
 	void insert(const T&, size_t);
-	void print() const;
+
+	void print() const; //only for TEST
 
 	Node<T>* getHead() const { return m_head; }
 	void setHead(Node<T>* node) { m_head = node; }
