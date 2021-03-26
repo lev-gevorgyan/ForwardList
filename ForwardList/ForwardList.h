@@ -53,7 +53,7 @@ void ForwardList<T>::push_front(const T& data)
 		setHead(node);
 	}
 	else {
-		node->next = m_head;
+		node->next = getHead();
 		setHead(node);
 	}
 }
@@ -69,7 +69,7 @@ void ForwardList<T>::insert(const T& data, size_t pos)
 		setHead(node);
 	} 
 	else {
-		Node<T>* cur{ m_head };
+		Node<T>* cur{ getHead() };
 		Node<T>* prev{ nullptr };
 		Node<T>* next{ nullptr };
 
@@ -93,7 +93,7 @@ void ForwardList<T>::insert(const T& data, size_t pos)
 template<typename T>
 void ForwardList<T>::print() const
 {
-	Node<T>* tmp = getHead();
+	Node<T>* tmp = getHead(); m_head
 	while (tmp)
 	{
 		std::cout << tmp->data << std::endl;
