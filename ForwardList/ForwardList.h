@@ -22,6 +22,11 @@ public:
 	Node<T>* getEntry(size_t);
 	bool setEntry(size_t, Node<T>*);
 
+	~ForwardList()
+	{
+		clear();
+	}
+
 	void print() const; //only for TEST
 
 	Node<T>* getHead() const { return m_head; }
