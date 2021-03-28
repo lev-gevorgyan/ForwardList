@@ -177,9 +177,18 @@ bool ForwardList<T>::pop_front()
 	if (isEmpty())
 		return false;
 
-	Node<T>* prev_head = getHead();
-	setHead(getHead()->next);
-	delete prev_head;
+	if (getLength() > 1)
+	{
+		Node<T>* prev_head = getHead();
+		setHead(getHead()->next);
+		delete prev_head;
+	}
+	else
+	{
+		delete getHead();
+		setHead(nullptr);
+	}
+		
 
 	return true;
 }
